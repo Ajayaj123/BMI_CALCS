@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI VALUE OF AN PERSON</title>
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css"
+    />
+  </head>
+  <style>
+    body {
+      background-image: url(1.jpg);
+    }
+
+    .p:hover {
+      color: coral;
+      background-color: black;
+      border-radius: 20px;
+    }
+  </style>
+
+  <body>
+    <div class="container mt-5">
+      <div class="row mt-5">
+        <div
+          class="offset-lg-4 col-lg-4 col-md-6 col-sm-6 bg-light mt-5 p"
+          style="
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 40px;
+            padding-top: 10px;
+            text-align: center !important;
+          "
+        >
+          <div class="p text-center">
+            <div class="col-md-6 col-sm-6">
+              <h1>BMI</h1>
+              <h6>Weight and Height of the person</h6>
+              <input
+                type="text"
+                placeholder="Weight 'eg-30' "
+                id="w"
+                style="
+                  width: 300px;
+                  border-radius: 20px;
+                  height: 40px;
+                  box-shadow: 2px 3px 3px 2px;
+                "
+                class="mt-4"
+              />
+              <input
+                type="text"
+                placeholder="Height 'eg-1.38' "
+                name=""
+                id="h"
+                style="
+                  width: 300px;
+                  border-radius: 20px;
+                  height: 40px;
+                  box-shadow: 2px 3px 3px 2px;
+                "
+                class="mt-3"
+              />
+
+              <button
+                onclick="age(document.getElementById('w').value,document.getElementById('h').value)"
+                class="btn mt-5"
+                style="background-color: coral"
+              >
+                <b>FIND BMI</b>
+              </button>
+              <div
+                class="text-start offset-lg-1 mt-4 col-md-6 col-sm-6"
+                style="
+                  font-family: Tahoma, Geneva, Verdana, sans-serif;
+                  border-radius: 20px; ;
+                "
+              >
+                <p>BMI VALUE IS <span id="demo"></span></p>
+                <p><span id="demo1"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function age(w, h) {
+        //Method-1
+
+        bmi = w / (h * h);
+
+        if (bmi < 19) {
+          document.getElementById("demo").innerHTML = bmi;
+          document.getElementById("demo1").innerHTML = " And You are lean";
+        } else if (bmi >= 19 && bmi < 26) {
+          document.getElementById("demo").innerHTML = bmi;
+          document.getElementById("demo1").innerHTML = "And You are normal";
+        } else {
+          document.getElementById("demo1").innerHTML = "And You are obicity";
+          document.getElementById("demo").innerHTML = bmi;
+        }
+        //Method-2
+        bmi < 19
+          ? console.log("BMI=", bmi, "lean")
+          : bmi >= 19 && bmi < 26
+          ? console.log("BMI=", bmi, "normal")
+          : console.log("BMI=", bmi, " obicity");
+      }
+    </script>
+    <script src="./bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
